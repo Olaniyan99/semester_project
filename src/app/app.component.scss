@@ -1,0 +1,24 @@
+.header{
+    background-color: white;
+    position: fixed;
+    width: 100%;
+    margin-top: 20px;
+
+
+    p{
+        color: #F57B51;
+        display: inline;
+        margin-left: 150px;
+    }
+    .list{
+        float: right;
+    }
+    li{
+        cursor: pointer;
+        display: inline-block;
+        padding-right: 40px;
+        a{
+            text-decoration: none;
+        }        
+    }
+}

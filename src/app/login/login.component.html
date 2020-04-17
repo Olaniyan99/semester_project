@@ -1,0 +1,47 @@
+<div class="header">
+    <p>Company Name Here</p>
+    <div class="list">
+        <li><a style="color:gray" [routerLink]="['/home']" href="#home"> Home </a></li>
+        <li><a style="color:gray" href="#aboutus"> About Us</a></li>
+        <li><a style="color:gray" [routerLink]="['/login']" href="#login"> Login</a></li>
+        <li><a style="color:#F57B51" href="#signup"> Sign up </a></li>
+        <li><a style="color:#F57B51" href="#donate"> Donate </a></li>
+    </div>
+   
+</div>
+<div class="container">
+    <div class="modal-box">
+        <mat-tab-group dynamicHeight="true">
+            <mat-tab label="Sign in" >
+                <div class="inputfield" style="margin-top: 300px;">
+                    <label for="name" style="font-size: larger; color: rgb(107, 107, 107)"><b>Username</b></label>
+                    <input type="username" placeholder="Enter Username" name="uname" required>
+                
+                    <label for="psw" style="font-size: larger; color: rgb(107, 107, 107)"><b>Password</b></label>
+                    <input type="password" placeholder="Enter Password" name="psw" required>
+                
+                    <button class="signin">Sign in</button>
+                    <label><input type="checkbox" checked="checked" name="remember"> Remember me</label>
+                    <button class="google">Continue with Google</button>
+                </div>
+            </mat-tab>
+            
+            <mat-tab label="Register">
+                <div class="inputfield" style="margin-top: 300px;">
+                    <label for="name" style="font-size: larger; color: rgb(107, 107, 107)"><b>Username</b></label>
+                    <input type="username" placeholder="Username" name="uname" required>
+
+                    <label for="emil" style="font-size: larger; color: rgb(107, 107, 107)"><b>Email</b></label>
+                    <input type="password" placeholder="Enter Email" name="psw" required>
+                
+                    <label for="psw" style="font-size: larger; color: rgb(107, 107, 107)"><b>Password</b></label>
+                    <input type="password" placeholder="Password" name="psw" required>
+                
+                    <button class="signin">Continue</button>
+                </div>
+            </mat-tab>
+          </mat-tab-group>
+        
+
+    </div>
+</div>
