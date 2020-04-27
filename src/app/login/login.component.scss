@@ -122,6 +122,39 @@
 }
 
 
+.identify{
+    margin-top: 20px;
+    margin-bottom: 30px;
+    p{
+        font-size: 15px;
+        font-weight: 500;
+    }
+    .identify-wrapper {
+        display: flex;
+        justify-content: space-evenly;
+        flex-direction: row;
+        width: 500px;
+    
+        button{
+            width: 100px;
+            height: 30px;
+            border-radius: 20px;
+            font-size: 14px;
+            font-weight: 500;
+            outline: none;
+        }
+        :hover{
+            background-color: #F9C1AE;
+        }
+    
+    }
+
+}
+
+//ngclass
+
+
+
 
 
   

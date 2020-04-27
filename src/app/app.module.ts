@@ -10,13 +10,18 @@ import { MatToolbarModule } from '@angular/material/toolbar';
 import {MatCardModule} from '@angular/material/card';
 import {MatProgressSpinnerModule} from '@angular/material/progress-spinner';
 import { RockpaperscissorsComponent } from './rockpaperscissors/rockpaperscissors.component';
+import { TrivalgameComponent } from './trivalgame/trivalgame.component';
+import { DonateComponent } from './donate/donate.component';
+import {MatFormFieldModule} from '@angular/material/form-field';
 
 @NgModule({
   declarations: [
     AppComponent,
     WelcomepageComponent,
     LoginComponent,
-    RockpaperscissorsComponent
+    RockpaperscissorsComponent,
+    TrivalgameComponent,
+    DonateComponent
   ],
   imports: [
     BrowserModule,
@@ -26,6 +31,7 @@ import { RockpaperscissorsComponent } from './rockpaperscissors/rockpaperscissor
     MatToolbarModule,
     MatCardModule,
     MatProgressSpinnerModule,
+    MatFormFieldModule,
   ],
   providers: [],
   bootstrap: [AppComponent]

@@ -1,0 +1,52 @@
+.header{
+    background-color: white;
+    position: fixed;
+    width: 100%;
+    margin-top: 20px;
+
+
+    p{
+        color: #F57B51;
+        display: inline;
+        margin-left: 150px;
+    }
+    .list{
+        float: right;
+    }
+    li{
+        display: inline-block;
+        padding-right: 40px;
+        a{
+            text-decoration: none;
+        }        
+    }
+}
+
+.intro{
+    position: absolute;
+    top: 10%;
+    left: 35%;
+    width: 800px;
+    height: 100px;
+    h1 {
+        font-size: 50px;
+        font-weight: bold;
+        padding-bottom: 10px;
+    }
+    p {
+        font-size: 20px;
+        margin-left: 230px;
+        color: rgb(170, 170, 170);
+    }
+}
+
+.card-info {
+    position: absolute;
+    top: 18%;
+    left: 28%;
+    width: 1100px;
+    height: 800px;
+    margin-bottom: 50px;
+    background-color: #FAFAFA;
+
+}
