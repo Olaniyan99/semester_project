@@ -1,4 +1,4 @@
-<div class="container">
+<div class="container1">
     <div class="modal-box">
         <mat-tab-group dynamicHeight="true">
             <mat-tab label="Sign in" >
@@ -50,13 +50,19 @@
                 <div class="identify">
                     <p>Are you a Parent or Student?</p>
                     <div class="identify-wrapper">
-                        <button>Parent</button>
-                        <button>Student</button>
+                        <button id ='parent'(click)="ifParent()">Parent</button>
+                        <button id ='student' (click)="ifStudent()">Student</button>
                     </div>
                 </div>
                 <button class="signin" mat-button (click)="continue()">Register</button>
             </div>
           </ng-template> 
+
+          <ng-template #usernameTemplate>
+            <div class="child-username">
+                <p>eniola</p>
+            </div>
+          </ng-template>
         
 
     </div>

@@ -1,4 +1,4 @@
-<mat-toolbar style="background-color: rgb(160, 59, 228); color: white">
+<mat-toolbar style="position:absolute; background-color: rgb(160, 59, 228); color: white; top: 4%;">
     Rock Paper Scissors
 </mat-toolbar>
 
@@ -10,11 +10,11 @@
             <button mat-fab color="primary" class="score">{{ scores[0] }}</button>
             </div>
           <h3 > Choose your weapon: </h3>
-         <div  class="content2">
-           <i (click)="pick(0)"  [ngClass]="{'selectedWeapon':(playerSelected === 0)}">Rock</i>
-           <i (click)="pick(1)" [ngClass]="{'selectedWeapon':(playerSelected === 1)}">Paper</i>
-            <i (click)="pick(2)" [ngClass]="{'selectedWeapon':(playerSelected === 2)}">Scissor</i>
-           </div>
+         <div class="content2">
+           <i (click)="pick(0)"  [ngClass]="{'selectedWeapon':(playerSelected === 0)}">🥦</i>
+           <i (click)="pick(1)" [ngClass]="{'selectedWeapon':(playerSelected === 1)}">📄</i>
+            <i (click)="pick(2)" [ngClass]="{'selectedWeapon':(playerSelected === 2)}"> ✄ </i>
+            </div>
         </mat-card-content>   
     </mat-card>
 

@@ -1,10 +1,46 @@
-
-<div class="intro">
-    <h1>Thank you for choosing to Donate!</h1>
-    <p>Please enter your information below</p>
-</div>
-
-<div class="card-info">
+<div class="container1"*ngIf='submit===false; else appreciation' >
+    <div class="intro">
+        <h1>Thank you for choosing to Donate!</h1>
+        <p>Please enter your information below</p>
+    </div>
     
-
+    <div class="card-info" >
+        <label class="wrapper"> Name on Card 
+            <input type="text" [formControl]="name" required>
+        </label>
+        <label class="wrapper" style="margin-top: 50px;"> Card Number 
+            <input type="text" [formControl]="cardNum" required>
+        </label>
+        <div class="container">
+            <label> CCV      
+                <input type="text" [formControl]="ccv" required>
+            </label>
+            <label > Expiration Date 
+                <input type="text" [formControl]="expDate" required>
+            </label>
+        </div>
+    
+        <label class="wrapper"style="margin-top: 220px;"> Address line 1:
+            <input type="text" [formControl]="address1" required>
+        </label>
+        <label class="wrapper" style="margin-top: 270px;"> Address line 2: 
+            <input type="text" [formControl]="address2" required>
+        </label>
+        <label class="wrapper" style="margin-top: 320px;"> City:
+            <input type="text" [formControl]="city" required>
+        </label>
+        <label class="wrapper" style="margin-top: 370px;"> State:
+            <input type="text" [formControl]="state" required>
+        </label>
+        <label class="wrapper" style="margin-top: 420px;"> Zip-code: 
+            <input type="text" [formControl]="zipCode" required>
+        </label>
+    <button (click)="submitBtn()" >Submit</button>
+    </div>
 </div>
+<ng-template #appreciation>
+    <div class="appreciation">
+        <p>Much appreciated!</p>
+        <img src="../../assets/check_mark.png" />
+    </div>
+</ng-template>

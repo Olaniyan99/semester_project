@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { NgClass } from '@angular/common';
 
 @Component({
   selector: './app-login',
@@ -8,6 +9,7 @@ import { Component, OnInit } from '@angular/core';
 export class LoginComponent implements OnInit {
   continueButton = false;
   loginError = false;
+  flag = false;
 
   username: string;
   password: string;
@@ -21,6 +23,16 @@ export class LoginComponent implements OnInit {
     if (this.username === null || this.password === null) {
       this.loginError = true;
     }
+  }
+
+  ifParent() {
+    document.getElementById('parent').style.backgroundColor = 'rgb(249, 193, 174)';
+    document.getElementById('student').style.backgroundColor = 'white';
+  }
+
+  ifStudent() {
+    document.getElementById('student').style.backgroundColor = 'rgb(249, 193, 174)';
+    document.getElementById('parent').style.backgroundColor = 'white';
   }
 
   continue() {
