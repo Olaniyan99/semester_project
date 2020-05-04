@@ -127,5 +127,8 @@
       }
     }
   },
-  "defaultProject": "cosc412"
+  "defaultProject": "cosc412",
+  "cli": {
+    "analytics": false
+  }
 }
