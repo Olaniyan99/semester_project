@@ -1,1 +1,62 @@
-<p>admin-dashboard works!</p>
+<div class="wrapper">
+  <div class="s1">
+    <div>
+      <h3>Current Balance</h3>
+      <h2>${{ dataset.amount }}</h2>
+    </div>
+    <div class="donation-summary">
+      <div *ngFor="let item of dataset.donations">
+        <div class="donation-card">
+          <p>{{ item.name }}</p>
+          <hr
+            width="50%"
+            style="height: 1px; border: none; background-color: #44444463;"
+          />
+          <p>${{ item.amount }}</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<div style="width: 90%; margin: auto;">
+  <h3>Students</h3>
+  <hr
+    width="100%"
+    style="height: 1px; border: none; background-color: #44444463;"
+  />
+</div>
+<div class="s1 white">
+  <div
+    style="
+      min-height: 300px;
+      padding-right: 60px;
+      border-right: 1px solid #4444442b;
+      min-width: 200px;
+    "
+
+  >
+    <div *ngFor="let student of students" class="student-card" (click)="fetchStudentStats(student.username)">
+      <img src="../../assets/profile.png" />
+      <p>{{ student.username }}</p>
+    </div>
+  </div>
+  <div style="width: 100%">
+      <div style="text-align: center; margin: auto;" *ngIf="highlightedStats; else noContent">
+          <img style="width: 50px;" src="../../assets/profile.png"/>
+          <h3>Student name</h3>
+          <hr width="60%"/>
+          <p>Score's up ... since last attempt</p>
+            <h4>Recent Attempts</h4>
+            <div class="stat-card" *ngFor="let stat of highlightedStats">
+                <p>{{stat.date}}</p>
+                <p>{{stat.game}}</p>
+                <p>{{stat.score}}</p>
+            </div>
+      </div>
+      <ng-template #noContent>
+          <div style="margin: auto; width: 80%; text-align: center; color: #44444463;">
+            <p>Choose a student to view their stats..</p>
+        </div>
+      </ng-template>
+  </div>
+</div>

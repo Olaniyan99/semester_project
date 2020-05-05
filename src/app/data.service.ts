@@ -32,6 +32,11 @@ export class DataService {
     return this.http.get(reqUri);
   }
 
+  fetchStudents(){
+    const reqUri = `${environment.API}/users/search?student=true`;
+
+    return this.http.get(reqUri);
+  }
   donate(args: {
     amount: string;
     name: string;
@@ -68,9 +73,10 @@ export class DataService {
   }
 
   fetchStats(username?: string, game?: string) {
-    const query = '';
+    let query = '';
 
-    username ? query.concat(`username=${username}`) : '';
+    query = username.length>1 ? query.concat(`username=${username}`) : '';
+    console.log(query);
     game ? query.concat(`game=${game}`) : '';
 
     const reqUri = `${environment.API}/stats?${query}`;

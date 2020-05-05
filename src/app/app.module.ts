@@ -16,6 +16,7 @@ import { ReactiveFormsModule } from '@angular/forms';
 import { AdminDashboardComponent } from './admin-dashboard/admin-dashboard.component';
 import { ParentDashboardComponent } from './parent-dashboard/parent-dashboard.component';
 import { TrivalgameComponent } from './trivalgame/trivalgame.component';
+import { HttpClient, HttpClientModule } from '@angular/common/http';
 
 @NgModule({
   declarations: [
@@ -38,8 +39,10 @@ import { TrivalgameComponent } from './trivalgame/trivalgame.component';
     MatProgressSpinnerModule,
     MatFormFieldModule,
     ReactiveFormsModule,
+    HttpClientModule,
+
   ],
-  providers: [],
+  providers: [HttpClient],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
