@@ -23,18 +23,22 @@
 }
 
 img{
-    padding-top: 200px;
-    margin-right: 150px;
-    float: right;
+    // padding-top: 200px;
+    // margin-right: 150px;
+    position: absolute;
+    top: 20%;
+    left: 65%;
     max-width: 600px;
     max-height: 600px;
-    animation: slide-left-fade-in 4s;
+    animation: slide-left-fade-in 2s;
 
 }
 
 .intro{
-    margin-left: 200px;
-    padding-top: 230px;
+  position: absolute;
+  left: 8%;
+  top: 20%;
+
 
   }
 
@@ -67,26 +71,24 @@ img{
 
 
   .signup{
-    margin-left: 300px;
+    position: absolute;
+    left: 8%;
+    bottom: 25%;
 
     p{
       color: #D1CEBD;
-      position: absolute;
-      bottom: 300px;
-      left: 200px;
       font-style: normal;
       font-weight: bolder;
       font-size: 30px;
       padding-bottom: 20px;
+      width: 500px;
 
     }
     button {
-      position: absolute;
       color: white;
       font-size: 20px;
       font-weight: bold;
       background-color: #F57B51;
-      bottom: 250px;
       height: 50px;
       width: 200px;
       border-radius: 30px;
