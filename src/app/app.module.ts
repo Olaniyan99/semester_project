@@ -40,7 +40,6 @@ import { HttpClient, HttpClientModule } from '@angular/common/http';
     MatFormFieldModule,
     ReactiveFormsModule,
     HttpClientModule,
-
   ],
   providers: [HttpClient],
   bootstrap: [AppComponent]

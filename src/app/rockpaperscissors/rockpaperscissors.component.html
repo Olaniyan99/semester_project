@@ -7,13 +7,13 @@
         <mat-card-content>
           <div class="content1">
                   <h2>  You</h2>
-            <button mat-fab color="primary" class="score">{{ scores[0] }}</button>
+            <button mat-fab color="primary" style="background-color:rgb(92, 92, 250); color: white; border-radius: 20px;" class="score">{{ scores[0] }}</button>
             </div>
           <h3 > Choose your weapon: </h3>
          <div class="content2">
-           <i (click)="pick(0)"  [ngClass]="{'selectedWeapon':(playerSelected === 0)}">🥦</i>
-           <i (click)="pick(1)" [ngClass]="{'selectedWeapon':(playerSelected === 1)}">📄</i>
-            <i (click)="pick(2)" [ngClass]="{'selectedWeapon':(playerSelected === 2)}"> ✄ </i>
+           <i (click)="pick(0)"  [ngClass]="{'selectedWeapon':(playerSelected === 0)}" >Rock</i>
+           <i (click)="pick(1)" [ngClass]="{'selectedWeapon':(playerSelected === 1)}">Paper</i>
+            <i (click)="pick(2)" [ngClass]="{'selectedWeapon':(playerSelected === 2)}"> Scissor </i>
             </div>
         </mat-card-content>   
     </mat-card>
@@ -22,10 +22,10 @@
         <mat-card-content>
             <div class="content1">
                     <h2>  Player 2</h2>
-              <button mat-fab color="accent" class="score">{{ scores[1] }}</button>
+              <button mat-fab color="accent" style="background-color: rgb(250, 43, 43); color: white; border-radius: 20px;" class="score">{{ scores[1] }}</button>
               </div>
               <br><br>
-          <div *ngIf="enemySelected !== -1" class="flex-container flex-center" >
+          <div style="margin-top: 100px;" *ngIf="enemySelected !== -1" class="flex-container flex-center" >
              <i *ngIf="enemySelected === 0"> Rock</i>
              <i *ngIf="enemySelected === 1">Paper</i>
               <i *ngIf="enemySelected === 2">Scissor</i>           
@@ -41,8 +41,8 @@
         <ng-template [ngSwitchCase]= "2"> <h1>It's a tie! </h1></ng-template>
         <ng-template ngSwitchDefault> </ng-template>
     </div> 
-    <p> Pick again to continue or </p>
-    <button  (click)="reset()" mat-raised-button  color="primary"> Reset score</button>
+    <p style="font-size: medium;"> Pick again to continue or </p>
+    <button style="width: 100px; height: 15p; background-color: green; font-size: medium; border-radius: 10px;" (click)="reset()" mat-raised-button  color="primary"> Reset score</button>
 </div>
 
 <div class="flex-container flex-center" *ngIf="loading">
