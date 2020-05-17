@@ -4,6 +4,7 @@ import { NgClass } from '@angular/common';
 import { LoginService } from './login.service';
 import { Injectable } from '@angular/core';
 import { catchError, map, first } from 'rxjs/operators';
+import { FormGroup, FormControl, FormsModule } from '@angular/forms';
 
 
 @Component({
@@ -15,6 +16,22 @@ export class LoginComponent implements OnInit {
   continueButton = false;
   loginError = false;
   flag = false;
+  loginForm = new FormGroup({
+    username: new FormControl(""),
+    password: new FormControl("")
+  })
+
+  // registerForm1 = new FormGroup({
+  //   "username": new FormControl(""),
+  //   "password": new FormControl(""),
+  //   "email": new FormControl("")
+  // })
+
+  // registerForm2 = new FormGroup({
+  //   address1: new FormControl(""),
+  //   address2: new FormControl(""),
+  //   city: new FormControl("")
+  // });
 
   username: string;
   email: string;
@@ -35,8 +52,8 @@ export class LoginComponent implements OnInit {
   }
 
   authenticateLogin() {
-    const username = this.username;
-    const password = this.password;
+    const username = this.loginForm.value.username;
+    const password = this.loginForm.value.password;
     // if(username !== undefined && username !== null){
     const user = this.auth
       .login({ username, password })

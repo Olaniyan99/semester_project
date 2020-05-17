@@ -20,9 +20,9 @@ export class LoginService {
     return this.currentUserSubject.value;
 }
 
-  login(loginInfo: { username: string; password: string }) {
-    console.log(loginInfo);
-    return this.http.post('http://localhost:3000/users/login', {loginInfo});
+  login(info: { username: string; password: string }) {
+    console.log(info);
+    return this.http.post('http://localhost:3000/users/login', {info});
   }
 
 

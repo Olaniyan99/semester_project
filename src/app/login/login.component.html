@@ -2,19 +2,24 @@
     <div class="modal-box">
         <mat-tab-group dynamicHeight="true">
             <mat-tab label="Sign in" >
-                <div class="inputfield" style="margin-top: 300px;">
-                    <label for="name" style="font-size: larger; color: rgb(107, 107, 107)"><b>Username</b></label>
-                    <input type="username" placeholder="Enter Username" name="uname" required>
-                
-                    <label for="psw" style="font-size: larger; color: rgb(107, 107, 107)"><b>Password</b></label>
-                    <input type="password" placeholder="Enter Password" name="psw" required>
-                
-                    <button class="signin" (click)='authenticateLogin()'>Sign in</button>
-                    <label><input type="checkbox" checked="checked" name="remember"> Remember me</label>
-                    <button class="google">Continue with Google</button>
-                </div>
+                <form [formGroup]="loginForm">
+                    <div class="inputfield" style="margin-top: 300px;">
+                        <label for="name" style="font-size: larger; color: rgb(107, 107, 107)"><b>Username</b></label>
+                        <input formControlName="username" type="username" placeholder="Enter Username" name="uname" required>
+                    
+                        <label for="psw" style="font-size: larger; color: rgb(107, 107, 107)"><b>Password</b></label>
+                        <input formControlName="password" type="password" placeholder="Enter Password" name="psw" required>
+                    
+                        <button class="signin" (click)='authenticateLogin()'>Sign in</button>
+                        <label><input type="checkbox" checked="checked" name="remember"> Remember me</label>
+                        <button class="google">Continue with Google</button>
+                    </div>
+                </form>
+          
+
             </mat-tab>
-            
+            <form #registerForm1>
+                
             <mat-tab label="Register">
                 <div *ngIf="continueButton === false; else nextpage"  class="inputfield" style="margin-top: 300px;">
                     <label for="name" style="font-size: larger; color: rgb(107, 107, 107)"><b>Username</b></label>
@@ -28,34 +33,39 @@
                     <button class="signin" mat-button (click)="continue()">Continue</button>
                 </div>
             </mat-tab>
+        </form>
+
           </mat-tab-group>
           <ng-template #nextpage>
-            <div class="inputfield" style="margin-top: 300px;">
-                <label for="name" style="font-size: larger; color: rgb(107, 107, 107)"></label>
-                <input type="username" placeholder="Address line 1" name="uname" required>
-
-                <label for="name" style="font-size: larger; color: rgb(107, 107, 107)"></label>
-                <input type="username" placeholder="Address line 2" name="uname" required>
-
-                <label for="city" style="font-size: larger; color: rgb(107, 107, 107)"></label>
-                <input type="username" placeholder="City" name="psw" required>
-
-                <div class="wrapper" style="display: flex; justify-content: space-between; flex-direction: row; ">
-                    <label for="psw" style="font-size: larger; color: rgb(107, 107, 107);"></label>
-                    <input type="username" placeholder="State" name="psw" required>
-
-                    <label for="psw" style="font-size: larger; color: rgb(107, 107, 107)"></label>
-                    <input type="username" placeholder="Zipcode" name="psw" required>
-                </div>
-                <div class="identify">
-                    <p>Are you a Parent or Student?</p>
-                    <div class="identify-wrapper">
-                        <button id ='parent'(click)="ifParent()">Parent</button>
-                        <button id ='student' (click)="ifStudent()">Student</button>
+              <form>
+                <div class="inputfield" style="margin-top: 300px;">
+                    <label for="name" style="font-size: larger; color: rgb(107, 107, 107)"></label>
+                    <input type="username" placeholder="Address line 1" name="uname" required>
+    
+                    <label for="name" style="font-size: larger; color: rgb(107, 107, 107)"></label>
+                    <input type="username" placeholder="Address line 2" name="uname" required>
+    
+                    <label for="city" style="font-size: larger; color: rgb(107, 107, 107)"></label>
+                    <input type="username" placeholder="City" name="psw" required>
+    
+                    <div class="wrapper" style="display: flex; justify-content: space-between; flex-direction: row; ">
+                        <label for="psw" style="font-size: larger; color: rgb(107, 107, 107);"></label>
+                        <input type="username" placeholder="State" name="psw" required>
+    
+                        <label for="psw" style="font-size: larger; color: rgb(107, 107, 107)"></label>
+                        <input type="username" placeholder="Zipcode" name="psw" required>
                     </div>
+                    <div class="identify">
+                        <p>Are you a Parent or Student?</p>
+                        <div class="identify-wrapper">
+                            <button id ='parent'(click)="ifParent()">Parent</button>
+                            <button id ='student' (click)="ifStudent()">Student</button>
+                        </div>
+                    </div>
+                    <button class="signin" mat-button (click)='createUser()'>Register</button>
                 </div>
-                <button class="signin" mat-button (click)='createUser()'>Register</button>
-            </div>
+              </form>
+            
           </ng-template> 
 
           <ng-template #usernameTemplate>

@@ -12,7 +12,7 @@ import {MatProgressSpinnerModule} from '@angular/material/progress-spinner';
 import { RockpaperscissorsComponent } from './rockpaperscissors/rockpaperscissors.component';
 import { DonateComponent } from './donate/donate.component';
 import {MatFormFieldModule} from '@angular/material/form-field';
-import { ReactiveFormsModule } from '@angular/forms';
+import { ReactiveFormsModule, FormsModule } from '@angular/forms';
 import { AdminDashboardComponent } from './admin-dashboard/admin-dashboard.component';
 import { ParentDashboardComponent } from './parent-dashboard/parent-dashboard.component';
 import { TrivalgameComponent } from './trivalgame/trivalgame.component';
@@ -40,6 +40,7 @@ import { HttpClient, HttpClientModule } from '@angular/common/http';
     MatFormFieldModule,
     ReactiveFormsModule,
     HttpClientModule,
+    FormsModule
   ],
   providers: [HttpClient],
   bootstrap: [AppComponent]
