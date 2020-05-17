@@ -1,5 +1,10 @@
 import { Component, OnInit } from '@angular/core';
+import { Router, ActivatedRoute } from '@angular/router';
 import { NgClass } from '@angular/common';
+import { LoginService } from './login.service';
+import { Injectable } from '@angular/core';
+import { catchError, map, first } from 'rxjs/operators';
+
 
 @Component({
   selector: './app-login',
@@ -12,18 +17,57 @@ export class LoginComponent implements OnInit {
   flag = false;
 
   username: string;
+  email: string;
   password: string;
+  address1: string;
+  address2: string;
+  city: string;
+  state: string;
+  zipcode: string;
 
-  constructor() { }
+  constructor(
+    private router: Router,
+    private auth: LoginService,
+    private route: ActivatedRoute,
+  ) { }
 
   ngOnInit(): void {
   }
 
   authenticateLogin() {
-    if (this.username === null || this.password === null) {
-      this.loginError = true;
-    }
+    const username = this.username;
+    const password = this.password;
+    // if(username !== undefined && username !== null){
+    const user = this.auth
+      .login({ username, password })
+      .pipe(first())
+      .subscribe(
+        (response: any) => {
+        console.log(response);
+        const parsedUser = JSON.stringify(response.user);
+        localStorage.setItem('user', parsedUser);
+      });
+    console.log(user);
   }
+
+  createUser() {
+    const obj = {
+      username: this.username,
+      email: this.email,
+      password: this.password,
+      address1: this.address1,
+      address2: this.address2,
+      city: this.city,
+      state: this.state,
+      zipcode: this.zipcode
+    };
+
+    const payload = this.auth
+    .register(obj).subscribe((response: any) => {
+      console.log(response);
+    });
+  }
+
 
   ifParent() {
     document.getElementById('parent').style.backgroundColor = 'rgb(249, 193, 174)';

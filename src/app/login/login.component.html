@@ -9,7 +9,7 @@
                     <label for="psw" style="font-size: larger; color: rgb(107, 107, 107)"><b>Password</b></label>
                     <input type="password" placeholder="Enter Password" name="psw" required>
                 
-                    <button class="signin" (click)='authenticateLogin'>Sign in</button>
+                    <button class="signin" (click)='authenticateLogin()'>Sign in</button>
                     <label><input type="checkbox" checked="checked" name="remember"> Remember me</label>
                     <button class="google">Continue with Google</button>
                 </div>
@@ -54,7 +54,7 @@
                         <button id ='student' (click)="ifStudent()">Student</button>
                     </div>
                 </div>
-                <button class="signin" mat-button (click)="continue()">Register</button>
+                <button class="signin" mat-button (click)='createUser()'>Register</button>
             </div>
           </ng-template> 
 

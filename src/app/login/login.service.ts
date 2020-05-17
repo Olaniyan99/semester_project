@@ -1,22 +1,32 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { IUser } from '../interface/userInterface';
+import { catchError, map, first } from 'rxjs/operators';
+import { Observable, BehaviorSubject } from 'rxjs';
 
 @Injectable({
   providedIn: 'root'
 })
 export class LoginService {
-  private http: HttpClient;
 
-  constructor() {}
-
-  login(loginInfo: {username: string, password: string} ) {
-    const loginReq = this.http.post('http://localhost:4200/users/login', {loginInfo});
-    return loginReq;
+  private currentUserSubject: BehaviorSubject<IUser>;
+  public currentUser: Observable<IUser>;
+  constructor(private http: HttpClient) {
+    this.currentUserSubject = new BehaviorSubject<IUser>(JSON.parse(localStorage.getItem('user')));
+    this.currentUser = this.currentUserSubject.asObservable();
   }
 
+  public get currentUserValue() {
+    return this.currentUserSubject.value;
+}
+
+  login(loginInfo: { username: string; password: string }) {
+    console.log(loginInfo);
+    return this.http.post('http://localhost:3000/users/login', {loginInfo});
+  }
+
+
   register(userInfo: {
-    name: string;
     username: string;
     password: string;
     email: string;
@@ -26,7 +36,7 @@ export class LoginService {
     state: string;
     zipcode: string
   }) {
-    const registrationInfo = this.http.post('http://localhost:4200/users/create_account', userInfo);
+    const registrationInfo = this.http.post('http://localhost:3000/users/create_account', userInfo);
     return registrationInfo;
   }
 
