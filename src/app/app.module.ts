@@ -17,6 +17,7 @@ import { AdminDashboardComponent } from './admin-dashboard/admin-dashboard.compo
 import { ParentDashboardComponent } from './parent-dashboard/parent-dashboard.component';
 import { TrivalgameComponent } from './trivalgame/trivalgame.component';
 import { HttpClient, HttpClientModule } from '@angular/common/http';
+import { HomepageComponent } from './homepage/homepage.component';
 
 @NgModule({
   declarations: [
@@ -28,6 +29,7 @@ import { HttpClient, HttpClientModule } from '@angular/common/http';
     AdminDashboardComponent,
     ParentDashboardComponent,
     TrivalgameComponent,
+    HomepageComponent,
   ],
   imports: [
     BrowserModule,

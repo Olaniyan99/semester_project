@@ -16,10 +16,11 @@ export class LoginComponent implements OnInit {
   continueButton = false;
   loginError = false;
   flag = false;
+
   loginForm = new FormGroup({
-    username: new FormControl(""),
-    password: new FormControl("")
-  })
+    username: new FormControl(''),
+    password: new FormControl('')
+  });
 
   // registerForm1 = new FormGroup({
   //   "username": new FormControl(""),
@@ -64,7 +65,11 @@ export class LoginComponent implements OnInit {
         const parsedUser = JSON.stringify(response.user);
         localStorage.setItem('user', parsedUser);
       });
-    console.log(user);
+    if (user) {
+        setTimeout(() => {
+          this.router.navigate(['homepage']);
+     }, 1000);
+      }
   }
 
   createUser() {
@@ -83,6 +88,11 @@ export class LoginComponent implements OnInit {
     .register(obj).subscribe((response: any) => {
       console.log(response);
     });
+    if (payload) {
+      setTimeout(() => {
+        this.router.navigate(['homepage']);
+   }, 1500);
+    }
   }
 
 

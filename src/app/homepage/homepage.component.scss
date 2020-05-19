@@ -1,0 +1,28 @@
+p {
+    font-family: Lato;
+  }
+  
+  .wrapper{
+    display: inline-grid;
+    margin-left: 500px;
+    margin-top: 300px;
+    width: 1500px;
+    height: 500px;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-column-gap: 100px;
+    padding: 2em;
+    background-color: rgb(248, 141, 106);
+  }
+  
+  .content1{
+    display:grid;
+    grid-template-columns: 2fr 1fr 1fr;
+  }
+  
+  .content2{
+    display: grid;
+    grid-template-columns: repeat(3, 1fr );
+    margin-top: 100px;
+  }
+
+  
